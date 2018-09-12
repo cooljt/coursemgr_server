@@ -2,19 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+    	  content="width=device-width,inital-scale=1">
     <title>Course Manager</title>
+    <link rel="stylesheet"
+    	  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+	</script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="login.template.client.css">
 </head>
 <body>
-	<h1>Sign In</h1>
-	<label for="login-username">Username</label>
-	<input type="text"
-		   placeholder="TJ"
-		   id="login-username">
-	<label for="login-password">Password</label>
-	<input type="password"
-	       placeholder="1123asd!@#$"
-	       id="login-password">
-	<a href="#">Forget Password?</a>
-	<a href="#">Sign Up</a>
+	<div class="container" id="login_section">
+		<i class="fas fa-book mb-2 fa-4x"></i>
+		<h1>Sign In</h1>
+		<form>
+			<div class="form-group row">
+				<div class="col-sm">
+					<input type="text"
+		   	       		   placeholder="Username"
+		   	               id="login-username"
+		   	               class="form-control">
+				</div>		
+			</div>
+			<div class="form-group row">
+				 <div class="col-sm">
+				 	<input type="password"
+	       	       		   placeholder="Password"
+	               		   id="login-password"
+	               		   class="form-control">
+				 </div>
+			</div>
+		    <div class="form-group row">
+		    	<div class="col-sm">
+		    		<button class="btn btn-primary btn-block">Sign In</button>
+		    	</div>
+		    </div>
+		    <div class="row">
+		    	<div class="col-6"><a href="#" class="float-left">Forget Password?</a></div>
+		    	<div class="col-6"><a href="/signup/register.template.client.html" class="float-right">Sign Up</a></div>
+		    </div>	    	 
+		</form>
+	</div>
+
 </body>
 </html>
