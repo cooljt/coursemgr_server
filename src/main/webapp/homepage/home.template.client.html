@@ -13,7 +13,7 @@
 	
 	<link rel="stylesheet" href="home.style.client.css">
 </head>
-<body>
+<body class="bg-light">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
 		<div class="row" id="nav_panel_upper">
 			<div class="col-sm-1 home_center">
@@ -21,49 +21,174 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
-			<div class="col-sm-2 home_center">
+			<div class="col-sm-2 home_center" id="title">
 				<label>Course Manager</label>
 			</div>
 			<div class="col-sm-8 home_center">
 				<input type="text" placeholder="New Course" class="form-control">
 			</div>
 			<div class="col-sm-1 home_center">
-				<i class="fas fa-plus-circle fa-2x"></i>
+				<i class="fas fa-plus-circle fa-2x red"></i>
 			</div>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container-flush border-bottom">
 		<div class="row bg-light sticky-top home_vertical_center" id="status_bar">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-8">
+			<div class="col-sm-6 home_vertical_center extra_padding_left">
+				<label for="">Title</label>
+			</div>
+			<div class="col-sm-2">
 				<div class="row">
 					<div class="col-sm-6 home_vertical_center">
-						<label for="">Title</label>
+						<label for="" class="small_font_size">Owned by</label>
 					</div>
-					<div class="col-sm-2">
-						<div class="row">
-							<div class="col-sm-6 home_vertical_center">
-								<label for="" class="small_font_size">Owned by</label>
-							</div>
-							<div class="col-sm-6 home_vertical_center">
-								<i class="fas fa-caret-down"></i>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2 home_vertical_center">
-						<label for="" class="small_font_size">Last modified by me</label>
-					</div>
-					<div class="col-sm-1 home_vertical_center">
-						<i class="fas fa-th-large"></i>
-					</div>
-					<div class="col-sm-1 home_vertical_center">
-						<i class="fas fa-sort-alpha-up home_vertical_center"></i>
+					<div class="col-sm-6 home_vertical_center">
+						<i class="fas fa-caret-down"></i>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-2"></div>
+			<div class="col-sm-2 home_vertical_center">
+				<label for="" class="small_font_size">Last modified by me</label>
+			</div>
+			<div class="col-sm-1 home_vertical_center">
+				<i class="fas fa-th-large"></i>
+			</div>
+			<div class="col-sm-1 home_vertical_center">
+				<i class="fas fa-sort-alpha-up home_vertical_center"></i>
+			</div>
 		</div>
 	</div>
-
+	<div class="container">
+		<ul class="list-group" id="today">
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">6:45PM</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">6:45PM</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">6:45PM</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">6:45PM</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">6:45PM</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+		</ul>
+		<div class="row">
+			<p>Yesterday</p>
+		</div>
+		<ul class="list-group" id="yesterday">		
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 12,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 12,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 12,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 12,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+		</ul>
+		<div class="row">
+			<p>Previous 7 Day</p>
+		</div>
+		<ul class="list-group" id="previous">		
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 11,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 11,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 10,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-1"><i class="fas fa-sticky-note"></i></div>
+					<div class="col-sm-6"><p>CS5610 Web Development</p></div>
+					<div class="col-sm-2"><label for="">me</label></div>
+					<div class="col-sm-2"><label for="">Sep 10,2018</label></div>
+					<div class="col-sm-1"><i class="fas fa-times"></i></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<i class="fas fa-plus-circle fa-4x red float-right icon_low_right"></i>
 </body>
 </html>
