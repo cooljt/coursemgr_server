@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    	  content="width=device-width,inital-scale=1">
+    <title>Course Manager</title>
+    <link rel="stylesheet"
+    	  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+	</script>
+	<link rel="stylesheet" href="courseEditor.style.client.css">
+</head>
+<body>
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+		<button class="btn btn_transparent"><i class="fas fa-times"></i></button>
+		<p class="navbar-brand">CS5610-WebDev</p>
+		<ul class="navbar-nav nav_spread">
+			<li class="nav-item">
+				<a href="#" class="nav-link">Build</a>
+			</li>
+			<li class="navbar-nav">
+				<a href="#" class="nav-link">Pages</a>
+			</li>
+			<li class="navbar-nav">
+				<a href="#" class="nav-link">Theme</a>
+			</li>
+			<li class="navbar-nav">
+				<a href="#" class="nav-link">Store</a>
+			</li>
+			<li class="navbar-nav">
+				<a href="#" class="nav-link">App</a>
+			</li>
+			<li class="navbar-nav">
+				<a href="#" class="nav-link">Settings</a>
+			</li>
+			<li class="navbar-nav">
+				<button class="btn btn_transparent">
+					<i class="fas fa-plus"></i>
+				</button>
+			</li>
+		</ul>
+	</nav>
+	<div class="container-flush">
+		<div class="row">
+			<div class="col-2 bg-dark">
+				<ul class="nav flex-column nav-pills">
+           			<a class="nav-link active" href="#">Module 1</a>
+           			<a class="nav-link" href="#">Module 2</a>
+           			<a class="nav-link" href="#">Module 3</a>
+           			<a class="nav-link" href="#">Module 4</a>
+           			<li class="nav-item">
+  						<button class="btn btn_transparent float-right">
+						<i class="fas fa-plus text-white"></i>
+						</button>
+  					</li>
+       			</ul>
+			</div>
+			<div class="col-10">
+				<ul class="nav nav-pills">
+  					<li class="nav-item bg-dark">
+    					<a class="nav-link active" href="#">Topic 1</a>
+  					</li>
+  					<li class="nav-item bg-dark">
+    					<a class="nav-link" href="#">Topic 2</a>
+  					</li>
+  					<li class="nav-item bg-dark">
+    					<a class="nav-link" href="#">Topic 3</a>
+  					</li>
+  					<li class="nav-item bg-dark">
+    					<a class="nav-link" href="#">Topic 4</a>
+  					</li>
+  					<li class="nav-item">
+  						<button class="btn btn_dark">
+						<i class="fas fa-plus"></i>
+						</button>
+  					</li>
+				</ul>
+				<div class="row mt-2">
+					<div class="col-9"></div>
+					<div class="col-3 nav_spread">
+						<button class="btn btn-success">Save</button>
+						<p class="text-justify">Preview</p>
+						<i class="fas fa-toggle-off fa-3x"></i>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="container border d-flex flex-column justify-content-around widget_height">
+						<div class="row">
+							<div class="col-7">
+								<h3 class="text-justify">Heading widget</h3>
+							</div>
+							<div class="col-5 d-flex justify-content-end">
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-up"></i>
+								</button>
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-down"></i>
+								</button>
+								<select class="form-control w-auto" name="headingtype" id="heading">
+									<option value="heading">Heading</option>
+									<option value="paragraph">Paragraph</option>
+									<option value="list">List</option>
+									<option value="image">Image</option>
+								</select>
+    							<button class="btn btn-danger">
+    								<i class="fas fa-times"></i>
+    							</button>
+							</div>
+						</div>
+						<div class="row">
+							<input type="text" class="form-control wt-auton" placeholder="Heading Text">
+						</div>
+						<div class="row">
+							<select class="form-control" name="headingtype" id="heading">
+								<option value="h1">Heading 1</option>
+								<option value="h2">Heading 2</option>
+								<option value="h3">Heading 3</option>
+							</select>
+						</div>
+						<div class="row">
+							<input type="text" class="form-control" placeholder="Widget name">
+						</div>
+						<div class="row d-flex flex-column">
+							<p>Preview</p>
+							<h1>Heading Text</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-danger float-right icon-low-right">
+							<i class="fas fa-plus"></i>
+					</button>
+	</div>
+</body>
+</html>

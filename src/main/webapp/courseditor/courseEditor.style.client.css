@@ -1,0 +1,25 @@
+.btn_transparent {
+	background-color: transparent;
+}
+
+.nav_spread {
+	width:100%;
+	display: flex;
+	justify-content: space-around; 
+	align-items: flex-start;
+}
+
+.normal_horiz {
+	width:100%;
+	display: flex;
+}
+
+.icon_low_right {
+	position: fixed;
+	bottom: 0;
+	right: 2%;
+}
+
+.widget_height {
+	height: 400px;
+}
