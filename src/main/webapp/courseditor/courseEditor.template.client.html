@@ -44,7 +44,7 @@
 		</ul>
 	</nav>
 	<div class="container-flush">
-		<div class="row">
+		<div class="row w-100">
 			<div class="col-2 bg-dark">
 				<ul class="nav flex-column nav-pills">
            			<a class="nav-link active" href="#">Module 1</a>
@@ -59,7 +59,7 @@
        			</ul>
 			</div>
 			<div class="col-10">
-				<ul class="nav nav-pills">
+				<ul class="nav nav-pills mt-2">
   					<li class="nav-item bg-dark">
     					<a class="nav-link active" href="#">Topic 1</a>
   					</li>
@@ -87,7 +87,7 @@
 					</div>
 				</div>
 				<div class="row mt-2">
-					<div class="container border d-flex flex-column justify-content-around widget_height">
+					<div class="container border d-flex flex-column justify-content-around widget_height mt-2">
 						<div class="row">
 							<div class="col-7">
 								<h3 class="text-justify">Heading widget</h3>
@@ -110,24 +110,67 @@
     							</button>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row pl-4 pr-4">
 							<input type="text" class="form-control wt-auton" placeholder="Heading Text">
 						</div>
-						<div class="row">
+						<div class="row pl-4 pr-4">
 							<select class="form-control" name="headingtype" id="heading">
 								<option value="h1">Heading 1</option>
 								<option value="h2">Heading 2</option>
 								<option value="h3">Heading 3</option>
 							</select>
 						</div>
-						<div class="row">
+						<div class="row pl-4 pr-4">
 							<input type="text" class="form-control" placeholder="Widget name">
 						</div>
-						<div class="row d-flex flex-column">
+						<div class="row d-flex flex-column pl-4 pr-4">
 							<p>Preview</p>
 							<h1>Heading Text</h1>
 						</div>
 					</div>
+
+					<div class="container border d-flex flex-column justify-content-around widget_height mt-2">
+						<div class="row">
+							<div class="col-7">
+								<h3 class="text-justify">Heading widget</h3>
+							</div>
+							<div class="col-5 d-flex justify-content-end">
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-up"></i>
+								</button>
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-down"></i>
+								</button>
+								<select class="form-control w-auto" name="headingtype" id="heading">
+									<option value="heading">Heading</option>
+									<option value="paragraph">Paragraph</option>
+									<option value="list">List</option>
+									<option value="image">Image</option>
+								</select>
+    							<button class="btn btn-danger">
+    								<i class="fas fa-times"></i>
+    							</button>
+							</div>
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="text" class="form-control wt-auton" placeholder="Heading Text">
+						</div>
+						<div class="row pl-4 pr-4">
+							<select class="form-control" name="headingtype" id="heading">
+								<option value="h1">Heading 1</option>
+								<option value="h2">Heading 2</option>
+								<option value="h3">Heading 3</option>
+							</select>
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="text" class="form-control" placeholder="Widget name">
+						</div>
+						<div class="row d-flex flex-column pl-4 pr-4">
+							<p>Preview</p>
+							<h1>Heading Text</h1>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
