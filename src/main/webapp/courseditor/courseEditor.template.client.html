@@ -124,7 +124,7 @@
 							<input type="text" class="form-control" placeholder="Widget name">
 						</div>
 						<div class="row d-flex flex-column pl-4 pr-4">
-							<p>Preview</p>
+							<h3>Preview</h3>
 							<h1>Heading Text</h1>
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 					<div class="container border d-flex flex-column justify-content-around widget_height mt-2">
 						<div class="row">
 							<div class="col-7">
-								<h3 class="text-justify">Heading widget</h3>
+								<h3 class="text-justify">Paragraph widget</h3>
 							</div>
 							<div class="col-5 d-flex justify-content-end">
 								<button class="btn btn-warning">
@@ -141,9 +141,9 @@
 								<button class="btn btn-warning">
 									<i class="fas fa-arrow-down"></i>
 								</button>
-								<select class="form-control w-auto" name="headingtype" id="heading">
-									<option value="heading">Heading</option>
+								<select class="form-control w-auto" name="paragraphtype" id="paragraph">
 									<option value="paragraph">Paragraph</option>
+									<option value="heading">Heading</option>
 									<option value="list">List</option>
 									<option value="image">Image</option>
 								</select>
@@ -153,21 +153,97 @@
 							</div>
 						</div>
 						<div class="row pl-4 pr-4">
-							<input type="text" class="form-control wt-auton" placeholder="Heading Text">
+							<textarea name="paragraph_input" id="paragraph_input" cols="30" rows="3" class="form-control">Welcome to Course</textarea>
 						</div>
 						<div class="row pl-4 pr-4">
-							<select class="form-control" name="headingtype" id="heading">
-								<option value="h1">Heading 1</option>
-								<option value="h2">Heading 2</option>
-								<option value="h3">Heading 3</option>
+							<input type="text" class="form-control" placeholder="Widget name">
+						</div>
+						<div class="row d-flex flex-column pl-4 pr-4">
+							<h3>Preview</h3>
+							<p>Welcome to Course</p>
+						</div>
+					</div>
+
+					<div class="container border d-flex flex-column justify-content-around widget_height mt-2">
+						<div class="row">
+							<div class="col-7">
+								<h3 class="text-justify">List widget</h3>
+							</div>
+							<div class="col-5 d-flex justify-content-end">
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-up"></i>
+								</button>
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-down"></i>
+								</button>
+								<select class="form-control w-auto" name="listtype" id="list">
+									<option value="list">List</option>
+									<option value="paragraph">Paragraph</option>
+									<option value="heading">Heading</option>
+									<option value="image">Image</option>
+								</select>
+    							<button class="btn btn-danger">
+    								<i class="fas fa-times"></i>
+    							</button>
+							</div>
+						</div>
+						<div class="row pl-4 pr-4">
+							<textarea name="paragraph_input" id="paragraph_input" cols="30" rows="5" class="form-control">Put each
+item in
+a separate row
+							</textarea>
+						</div>
+						<div class="row pl-4 pr-4">
+							<select class="form-control" name="orderingtype" id="ordering">
+								<option value="Unordered">Unordered list</option>
+								<option value="Ordered">Ordered list</option>
 							</select>
 						</div>
 						<div class="row pl-4 pr-4">
 							<input type="text" class="form-control" placeholder="Widget name">
 						</div>
 						<div class="row d-flex flex-column pl-4 pr-4">
-							<p>Preview</p>
-							<h1>Heading Text</h1>
+							<h3>Preview</h3>
+							<ul>
+								<li>Put each</li>
+								<li>item in</li>
+								<li>a separate row</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="container border d-flex flex-column justify-content-around widget_height mt-2">
+						<div class="row">
+							<div class="col-7">
+								<h3 class="text-justify">Image widget</h3>
+							</div>
+							<div class="col-5 d-flex justify-content-end">
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-up"></i>
+								</button>
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-down"></i>
+								</button>
+								<select class="form-control w-auto" name="imagetype" id="image">
+									<option value="image">Image</option>
+									<option value="heading">Heading</option>
+									<option value="list">List</option>
+									<option value="image">Image</option>
+								</select>
+    							<button class="btn btn-danger">
+    								<i class="fas fa-times"></i>
+    							</button>
+							</div>
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="link" class="form-control" placeholder="http://lorempixel.com/300/150/">
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="text" class="form-control" placeholder="Widget name">
+						</div>
+						<div class="row d-flex flex-column pl-4 pr-4">
+							<h3>Preview</h3>
+							<img src="http://lorempixel.com/300/150/" alt="">
 						</div>
 					</div>
 
