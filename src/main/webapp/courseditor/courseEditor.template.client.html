@@ -129,6 +129,7 @@
 									<option value="paragraph">Paragraph</option>
 									<option value="list">List</option>
 									<option value="image">Image</option>
+									<option value="link">Link</option>
 								</select>
     							<button class="btn btn-danger">
     								<i class="fas fa-times"></i>
@@ -171,6 +172,7 @@
 									<option value="heading">Heading</option>
 									<option value="list">List</option>
 									<option value="image">Image</option>
+									<option value="link">Link</option>
 								</select>
     							<button class="btn btn-danger">
     								<i class="fas fa-times"></i>
@@ -206,6 +208,7 @@
 									<option value="paragraph">Paragraph</option>
 									<option value="heading">Heading</option>
 									<option value="image">Image</option>
+									<option value="link">Link</option>
 								</select>
     							<button class="btn btn-danger">
     								<i class="fas fa-times"></i>
@@ -254,6 +257,7 @@ a separate row
 									<option value="heading">Heading</option>
 									<option value="list">List</option>
 									<option value="image">Image</option>
+									<option value="link">Link</option>
 								</select>
     							<button class="btn btn-danger">
     								<i class="fas fa-times"></i>
@@ -269,6 +273,41 @@ a separate row
 						<div class="row d-flex flex-column pl-4 pr-4">
 							<h3>Preview</h3>
 							<img src="http://lorempixel.com/300/150/" alt="">
+						</div>
+					</div>
+
+					<div class="container border d-flex flex-column justify-content-around widget_height mt-2">
+						<div class="row">
+							<div class="col-7">
+								<h3 class="text-justify">Link widget</h3>
+							</div>
+							<div class="col-5 d-flex justify-content-end">
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-up"></i>
+								</button>
+								<button class="btn btn-warning">
+									<i class="fas fa-arrow-down"></i>
+								</button>
+								<select class="form-control w-auto" name="linktype" id="link">
+									<option value="link">Link</option>
+									<option value="heading">Heading</option>
+									<option value="list">List</option>
+									<option value="image">Image</option>
+									<option value="image">Image</option>
+								</select>
+    							<button class="btn btn-danger">
+    								<i class="fas fa-times"></i>
+    							</button>
+							</div>
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="link" class="form-control" placeholder="http://lorempixel.com/300/150/">
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="text" class="form-control" placeholder="Link Text">
+						</div>
+						<div class="row pl-4 pr-4">
+							<input type="text" class="form-control" placeholder="Widget name">
 						</div>
 					</div>
 
