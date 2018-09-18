@@ -5,3 +5,7 @@ h1 {
 body {
 	margin-top: 3%;
 }
+
+.wbdv-hidden {
+	display: none;
+}
