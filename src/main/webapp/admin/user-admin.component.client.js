@@ -1,7 +1,7 @@
 
 (function () {
     var $usernameFld, $passwordFld;
-    var $removeBtn, $editBtn, $createBtn, $updateBtn;
+    var $removeBtn, $editBtn, $createBtn, $updateBtn, $searchBtn;
     var $firstNameFld, $lastNameFld;
     var $userRowTemplate, $tbody;
     var $userRole;
@@ -18,9 +18,11 @@
         $userRole = $("#roleFld");
         $createBtn = $("#createBtn");
         $updateBtn = $("#updateBtn");
+        $searchBtn = $("#searchBtn");
 
         userTemplate = $(".wbdv-template.wbdv-hidden").clone();
         $createBtn.click(createUser);
+        $searchBtn.click(searchUser);
         renderUsers(findAllUsers());
         
 
@@ -106,7 +108,6 @@
             template.find(".wbdv-edit").click(selectUser);
             $('.wbdv-tbody').append(template);
         }
-        
     }
 
     function clearForm() {
@@ -115,4 +116,29 @@
         $lastNameFld.val("");
         $passwordFld.val("");
     }
+
+    function searchUser() {
+        var allUsers = findAllUsers();
+        username = $usernameFld.val();
+        firstName = $firstNameFld.val();
+        lastName = $lastNameFld.val();
+        role = $userRole.val();
+        var searchResult = [];
+
+        if (username == "" && firstName == "" && lastName == "" && role == "") {
+            renderUsers(searchResult);
+            return;
+        }
+
+        for (var i = 0; i < allUsers.length; i++) {
+            if ((username == '' || username == allUsers[i].username) &&
+                (firstName == ''|| firstName == allUsers[i].firstName) &&
+                (lastName == '' || lastName == allUsers[i].lastName) &&
+                (role == '' || role == allUsers[i].role)) {
+                searchResult.push(allUsers[i]);
+            }
+        }
+        renderUsers(searchResult);
+    }
+
 })();
