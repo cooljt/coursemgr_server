@@ -5,7 +5,7 @@ var allUsers = [
                 password:"12345",
                 firstName:"Alice",
                 lastName:"Bob",
-                role:"Student"
+                role:"STUDENT"
             },
             {
                 userID:2,
@@ -13,7 +13,7 @@ var allUsers = [
                 password:"12345",
                 firstName:"JI",
                 lastName:"GO",
-                role:"Student"
+                role:"STUDENT"
             },
             {
                 userID:3,
@@ -21,7 +21,7 @@ var allUsers = [
                 password:"12345",
                 firstName:"Bye",
                 lastName:"Cook",
-                role:"Student"
+                role:"STUDENT"
             },
             {
                 userID:4,
@@ -29,7 +29,7 @@ var allUsers = [
                 password:"12345",
                 firstName:"Tim",
                 lastName:"Ushe",
-                role:"Faculty"
+                role:"FACULTY"
             },
             {
                 userID:5,
@@ -37,7 +37,7 @@ var allUsers = [
                 password:"12345",
                 firstName:"Jane",
                 lastName:"Oh",
-                role:"Student"
+                role:"STUDENT"
             }
         ];
 
@@ -71,6 +71,7 @@ function AdminUserServiceClient() {
                 allUsers[i].firstName = user.firstName;
                 allUsers[i].lastName = user.lastName;
                 allUsers[i].role = user.role;
+                return;
             }
         }
     }

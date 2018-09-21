@@ -35,13 +35,9 @@
             lastName:$lastNameFld.val(),
             role:$userRole.val(),
         };
-        $usernameFld.val("");
-        $firstNameFld.val("");
-        $lastNameFld.val("");
-        $passwordFld.val("");
+        clearForm()
 
         userService.createUser(newUser);
-//        console.log(newUser)
         renderUsers(findAllUsers());
     }
 
@@ -68,9 +64,6 @@
         var userId = usrRow.attr("id");
         var user = findUserById(userId);
         renderUser(user);
-        $updateBtn.click(function(){
-            updateUser(userId);
-        });
     }
 
     function updateUser(userID) {
@@ -82,6 +75,7 @@
             role:$("#roleFld").val()
         }
         userService.updateUser(userID, updateUser);
+        clearForm();
         renderUsers(findAllUsers());
     }
 
@@ -90,7 +84,11 @@
         $("#passwordFld").val(user.password);
         $("#firstNameFld").val(user.firstName);
         $("#lastNameFld").val(user.lastName);
-        $("#roleFld").val(user.role);
+        $("#roleFld").val(user.role)
+        $updateBtn.unbind('click');
+        $updateBtn.click(function(){
+            updateUser(user.userID);
+        });
     }
 
     function renderUsers(users) {
@@ -109,5 +107,12 @@
             $('.wbdv-tbody').append(template);
         }
         
+    }
+
+    function clearForm() {
+        $usernameFld.val("");
+        $firstNameFld.val("");
+        $lastNameFld.val("");
+        $passwordFld.val("");
     }
 })();
