@@ -49,13 +49,20 @@ function AdminUserServiceClient() {
     this.updateUser = updateUser;
     /*this.url = 'http://localhost:8080/api/user';*/
     var self = this;
+
     function createUser(user, callback) {
         allUsers.push(user);
     }
+
     function findAllUsers() {
        return allUsers;      
     }
-    function findUserById(userId, callback) {}
+
+    function findUserById(userId, callback) {
+       return allUsers.find(function(element){
+            return element.userID == userId;
+        })
+    }
     function updateUser(userId, user, callback) {}
     function deleteUser(userId, callback) {
         allUsers = $.grep(allUsers, function(user){

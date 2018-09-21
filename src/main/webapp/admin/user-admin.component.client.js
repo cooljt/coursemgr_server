@@ -22,7 +22,7 @@
         userTemplate = $(".wbdv-template.wbdv-hidden").clone();
         $createBtn.click(createUser);
         $updateBtn.click(updateUser);
-        renderUsers(userService.findAllUsers());
+        renderUsers(findAllUsers());
         
 
     }
@@ -43,39 +43,42 @@
 
         userService.createUser(newUser);
 //        console.log(newUser)
-        renderUsers(userService.findAllUsers());
+        renderUsers(findAllUsers());
     }
 
-    function editUser(event) {
-
+    function findAllUsers() {
+        return userService.findAllUsers();
     }
 
-    function findAllUsers() {}
-    function findUserById() {}
+    function findUserById(userId) {
+        return userService.findUserById(userId);
+    }
+
     function deleteUser(event) {
-        var button = $(event.currentTarget);
-        var tr = button.parents(".wbdv-template");
-        var userId = tr.attr("id");
+        var deletButton = $(event.currentTarget);
+        var usrRow = deletButton.parents(".wbdv-template");
+        var userId = usrRow.attr("id");
         userService.deleteUser(userId);
-        tr.remove();
+        usrRow.remove();
         
     }
 
-    function selectUser() {}
+    function selectUser(event) {
+        var editButton = $(event.currentTarget);
+        var usrRow = editButton.parents(".wbdv-template");
+        var userId = usrRow.attr("id");
+        var user = findUserById(userId);
+        renderUser(user);
+        console.log(user);
+    }
+
     function updateUser() {}
 
     function renderUser(user) {
-        var newUser = $(".wbdv-template.wbdv-hidden").clone();
-        var timestamp = (new Date()).getTime();
-        newUser.removeClass("wbdv-hidden");
-        newUser.find(".wbdv-username").html(user.username);
-        newUser.find(".wbdv-first-name").html(user.firstName);
-        newUser.find(".wbdv-last-name").html(user.lastName);
-        newUser.find(".wbdv-role").html(user.role);
-        newUser.find(".wbdv-remove").attr("id", timestamp).click(deleteUser);
-        var timestamp2 = (new Date()).getTime();
-        newUser.find(".wbdv-edit").attr("id", timestamp2).click(editUser);
-        $('.wbdv-tbody').append(newUser);
+        $("#usernameFld").val(user.username);
+        $("#passwordFld").val(user.password);
+        $("#firstNameFld").val(user.firstName);
+        $("#lastNameFld").val(user.lastName);
     }
 
     function renderUsers(users) {
@@ -90,7 +93,7 @@
             template.find(".wbdv-last-name").html(user.lastName);
             template.find(".wbdv-role").html(user.role);
             template.find(".wbdv-remove").click(deleteUser);
-            template.find(".wbdv-edit").click(editUser);
+            template.find(".wbdv-edit").click(selectUser);
             $('.wbdv-tbody').append(template);
         }
         
