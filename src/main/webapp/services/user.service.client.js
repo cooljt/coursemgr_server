@@ -63,7 +63,17 @@ function AdminUserServiceClient() {
             return element.userID == userId;
         })
     }
-    function updateUser(userId, user, callback) {}
+    function updateUser(userId, user, callback) {
+        for (var i=0; i<allUsers.length; i++) {
+            if (allUsers[i].userID == userId) {
+                allUsers[i].username = user.username;
+                allUsers[i].password = user.password;
+                allUsers[i].firstName = user.firstName;
+                allUsers[i].lastName = user.lastName;
+                allUsers[i].role = user.role;
+            }
+        }
+    }
     function deleteUser(userId, callback) {
         allUsers = $.grep(allUsers, function(user){
             return user.userID != userId;

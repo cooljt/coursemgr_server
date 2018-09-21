@@ -21,7 +21,6 @@
 
         userTemplate = $(".wbdv-template.wbdv-hidden").clone();
         $createBtn.click(createUser);
-        $updateBtn.click(updateUser);
         renderUsers(findAllUsers());
         
 
@@ -69,16 +68,29 @@
         var userId = usrRow.attr("id");
         var user = findUserById(userId);
         renderUser(user);
-        console.log(user);
+        $updateBtn.click(function(){
+            updateUser(userId);
+        });
     }
 
-    function updateUser() {}
+    function updateUser(userID) {
+        var updateUser = {
+            username:$("#usernameFld").val(),
+            password:$("#passwordFld").val(),
+            firstName:$("#firstNameFld").val(),
+            lastName:$("#lastNameFld").val(),
+            role:$("#roleFld").val()
+        }
+        userService.updateUser(userID, updateUser);
+        renderUsers(findAllUsers());
+    }
 
     function renderUser(user) {
         $("#usernameFld").val(user.username);
         $("#passwordFld").val(user.password);
         $("#firstNameFld").val(user.firstName);
         $("#lastNameFld").val(user.lastName);
+        $("#roleFld").val(user.role);
     }
 
     function renderUsers(users) {
