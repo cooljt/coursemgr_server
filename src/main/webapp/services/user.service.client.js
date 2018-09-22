@@ -1,45 +1,35 @@
-var allUsers = [
-            {
-                userID:1,
-                username:"Alice",
-                password:"12345",
-                firstName:"Alice",
-                lastName:"Bob",
-                role:"STUDENT"
-            },
-            {
-                userID:2,
-                username:"JI",
-                password:"12345",
-                firstName:"JI",
-                lastName:"GO",
-                role:"STUDENT"
-            },
-            {
-                userID:3,
-                username:"Bye",
-                password:"12345",
-                firstName:"Bye",
-                lastName:"Cook",
-                role:"STUDENT"
-            },
-            {
-                userID:4,
-                username:"Cook",
-                password:"12345",
-                firstName:"Tim",
-                lastName:"Ushe",
-                role:"FACULTY"
-            },
-            {
-                userID:5,
-                username:"Jane",
-                password:"12345",
-                firstName:"Jane",
-                lastName:"Oh",
-                role:"STUDENT"
-            }
+var allUsers = [        
+{
+    "id": "123",
+    "username": "alice",
+    "password": "alice",
+    "email": "alice@wonderland.com",
+    "firstName": "Alice",
+    "lastName": "Wonderland",
+    "role": "FACULTY"
+  },
+  {
+    "id": "456",
+    "username": "bob",
+    "password": "bob",
+    "email": "bob@builder.com",
+    "firstName": "Bob",
+    "lastName": "Builder",
+    "role": "STUDENT"
+  },
+  {
+    "id": "789",
+    "username": "charly",
+    "password": "charly",
+    "email": "charly@peanuts.com",
+    "firstName": "Charly",
+    "lastName": "Brown",
+    "role": "STUDENT"
+  }
+
         ];
+
+
 
 function AdminUserServiceClient() {
     this.createUser = createUser;
@@ -60,12 +50,12 @@ function AdminUserServiceClient() {
 
     function findUserById(userId, callback) {
        return allUsers.find(function(element){
-            return element.userID == userId;
+            return element.id == userId;
         })
     }
     function updateUser(userId, user, callback) {
         for (var i=0; i<allUsers.length; i++) {
-            if (allUsers[i].userID == userId) {
+            if (allUsers[i].id == userId) {
                 allUsers[i].username = user.username;
                 allUsers[i].password = user.password;
                 allUsers[i].firstName = user.firstName;
@@ -77,7 +67,7 @@ function AdminUserServiceClient() {
     }
     function deleteUser(userId, callback) {
         allUsers = $.grep(allUsers, function(user){
-            return user.userID != userId;
+            return user.id != userId;
         });
     }
 }

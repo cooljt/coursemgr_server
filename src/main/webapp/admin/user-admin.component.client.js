@@ -64,7 +64,9 @@
         var editButton = $(event.currentTarget);
         var usrRow = editButton.parents(".wbdv-template");
         var userId = usrRow.attr("id");
+        console.log(userId);
         var user = findUserById(userId);
+        console.log(user);
         renderUser(user);
     }
 
@@ -82,14 +84,14 @@
     }
 
     function renderUser(user) {
-        $("#usernameFld").val(user.username);
+        $("#usernameFld").val(user['username']);
         $("#passwordFld").val(user.password);
         $("#firstNameFld").val(user.firstName);
         $("#lastNameFld").val(user.lastName);
         $("#roleFld").val(user.role)
         $updateBtn.unbind('click');
         $updateBtn.click(function(){
-            updateUser(user.userID);
+            updateUser(user.id);
         });
     }
 
@@ -98,7 +100,7 @@
         for (var i = 0; i < users.length; i++) {
             var template = userTemplate.clone()
             var user = users[i];
-            template.attr("id",user.userID);
+            template.attr("id",user.id);
             template.removeClass("wbdv-hidden");
             template.find(".wbdv-username").html(user.username);
             template.find(".wbdv-first-name").html(user.firstName);
