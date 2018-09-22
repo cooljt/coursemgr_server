@@ -30,7 +30,7 @@
     function createUser() {
         var timestamp = (new Date()).getTime();
         var newUser = {
-            userID:timestamp,
+            id:timestamp,
             username:$usernameFld.val(),
             password:$passwordFld.val(),
             firstName:$firstNameFld.val(),
@@ -64,19 +64,17 @@
         var editButton = $(event.currentTarget);
         var usrRow = editButton.parents(".wbdv-template");
         var userId = usrRow.attr("id");
-        console.log(userId);
         var user = findUserById(userId);
-        console.log(user);
         renderUser(user);
     }
 
     function updateUser(userID) {
         var updateUser = {
-            username:$("#usernameFld").val(),
-            password:$("#passwordFld").val(),
-            firstName:$("#firstNameFld").val(),
-            lastName:$("#lastNameFld").val(),
-            role:$("#roleFld").val()
+            username:$usernameFld.val(),
+            password:$passwordFld.val(),
+            firstName:$firstNameFld.val(),
+            lastName:$lastNameFld.val(),
+            role:$userRole.val()
         }
         userService.updateUser(userID, updateUser);
         clearForm();
@@ -84,11 +82,11 @@
     }
 
     function renderUser(user) {
-        $("#usernameFld").val(user['username']);
-        $("#passwordFld").val(user.password);
-        $("#firstNameFld").val(user.firstName);
-        $("#lastNameFld").val(user.lastName);
-        $("#roleFld").val(user.role)
+        $usernameFld.val(user.username);
+        $passwordFld.val(user.password);
+        $firstNameFld.val(user.firstName);
+        $lastNameFld.val(user.lastName);
+        $userRole.val(user.role)
         $updateBtn.unbind('click');
         $updateBtn.click(function(){
             updateUser(user.id);
