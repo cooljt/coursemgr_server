@@ -1,10 +1,13 @@
 var allUsers = [];
 
-$.getJSON("http://localhost:8080/users.json", function(data){
+$.getJSON("../users.json", function(data){
     for (var i = 0; i < data.length; i++) {
         allUsers.push(data[i]);
     }
 });
+
+
+
 
 function AdminUserServiceClient() {
     this.createUser = createUser;
