@@ -1,35 +1,10 @@
-var allUsers = [        
-{
-    "id": "123",
-    "username": "alice",
-    "password": "alice",
-    "email": "alice@wonderland.com",
-    "firstName": "Alice",
-    "lastName": "Wonderland",
-    "role": "FACULTY"
-  },
-  {
-    "id": "456",
-    "username": "bob",
-    "password": "bob",
-    "email": "bob@builder.com",
-    "firstName": "Bob",
-    "lastName": "Builder",
-    "role": "STUDENT"
-  },
-  {
-    "id": "789",
-    "username": "charly",
-    "password": "charly",
-    "email": "charly@peanuts.com",
-    "firstName": "Charly",
-    "lastName": "Brown",
-    "role": "STUDENT"
-  }
+var allUsers = [];
 
-        ];
-
-
+$.getJSON("http://localhost:8080/users.json", function(data){
+    for (var i = 0; i < data.length; i++) {
+        allUsers.push(data[i]);
+    }
+});
 
 function AdminUserServiceClient() {
     this.createUser = createUser;
