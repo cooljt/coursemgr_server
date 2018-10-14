@@ -1,12 +1,14 @@
 package com.example.CourseBoard.models;
 
 import java.util.Date;
+import java.util.List;
 
 public class Course {
   private int id;
   private String title;
   private Date created;
   private Date modified;
+  private List<Module> modules;
 
   public void setId(int id) {
     this.id = id;
@@ -24,6 +26,10 @@ public class Course {
     this.modified = modified;
   }
 
+  public void setModules(List<Module> modules) {
+    this.modules = modules;
+  }
+
   public int getId() {
     return id;
   }
@@ -38,5 +44,9 @@ public class Course {
 
   public Date getModified() {
     return modified;
+  }
+
+  public List<Module> getModules() {
+    return modules;
   }
 }
