@@ -8,7 +8,10 @@ import com.example.CourseBoard.models.ParagraphWidget;
 import com.example.CourseBoard.models.Topic;
 import com.example.CourseBoard.models.Widget;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -16,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class CourseService {
   List<Course> courses = new ArrayList<Course>(){{
     HeadingWidget w1 = new HeadingWidget();
@@ -62,6 +66,12 @@ public class CourseService {
 
   @GetMapping("api/courses")
   public List<Course> findAllCourses() {
+    return courses;
+  }
+
+  @PostMapping("api/courses")
+  public List<Course> createCourse(@RequestBody Course course) {
+    courses.add(course);
     return courses;
   }
 }

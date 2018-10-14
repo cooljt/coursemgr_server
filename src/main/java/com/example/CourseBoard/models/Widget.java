@@ -1,10 +1,10 @@
 package com.example.CourseBoard.models;
 
 public class Widget {
-  private int id;
+  private long id;
   private String type;
 
-  public int getId() {
+  public long getId() {
     return id;
   }
 
@@ -12,7 +12,7 @@ public class Widget {
     return type;
   }
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 

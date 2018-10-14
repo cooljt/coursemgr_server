@@ -4,13 +4,13 @@ import java.util.Date;
 import java.util.List;
 
 public class Course {
-  private int id;
+  private long id;
   private String title;
   private Date created;
   private Date modified;
   private List<Module> modules;
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -30,7 +30,7 @@ public class Course {
     this.modules = modules;
   }
 
-  public int getId() {
+  public long getId() {
     return id;
   }
 
