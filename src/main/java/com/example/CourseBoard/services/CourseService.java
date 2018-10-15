@@ -9,7 +9,9 @@ import com.example.CourseBoard.models.Topic;
 import com.example.CourseBoard.models.Widget;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -72,6 +74,17 @@ public class CourseService {
   @PostMapping("api/courses")
   public List<Course> createCourse(@RequestBody Course course) {
     courses.add(course);
+    return courses;
+  }
+
+  @DeleteMapping("api/courses/{courseId}")
+  public List<Course> deleteCourse(@PathVariable("courseId") long id) {
+    for (Course c:courses) {
+      if (c.getId() == id) {
+        courses.remove(c);
+        return courses;
+      }
+    }
     return courses;
   }
 }
