@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -82,6 +83,27 @@ public class CourseService {
     for (Course c:courses) {
       if (c.getId() == id) {
         courses.remove(c);
+        return courses;
+      }
+    }
+    return courses;
+  }
+
+  @GetMapping("api/courses/{courseId}")
+  public Course findCourseById(@PathVariable("courseId") long id) {
+    for (Course course:courses) {
+      if (course.getId() == id) {
+        return course;
+      }
+    }
+    return null;
+  }
+
+  @PutMapping("api/courses/{courseId}")
+  public List<Course> updateCourseById(@PathVariable("courseId") long id, @RequestBody Course course) {
+    for (int i = 0; i < courses.size(); i++) {
+      if (courses.get(i).getId() == id) {
+        courses.set(i, course);
         return courses;
       }
     }
