@@ -69,23 +69,6 @@ public class CourseService {
     add(c1);
   }};
 
-
-  List<Person> users = new ArrayList<>();
-
-
-  @PostMapping("api/register")
-  public Person register(@RequestBody Person user, HttpSession session) {
-    session.setAttribute("currentPerson", user);
-    users.add(user);
-    return user;
-  }
-
-  @GetMapping("api/profile")
-  public Person profile(HttpSession session) {
-    Person currentPerson = (Person)session.getAttribute("currentPerson");
-    return currentPerson;
-  }
-
   @GetMapping("api/courses")
   public List<Course> findAllCourses() {
     return courses;

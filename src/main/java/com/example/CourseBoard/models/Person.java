@@ -1,11 +1,16 @@
 package com.example.CourseBoard.models;
 
 public class Person {
+  private int id;
   private String username;
   private String password;
   private String firstName;
   private String lastName;
   private String userType;
+
+  public int getId() {
+    return id;
+  }
 
   public String getUserType() {
     return userType;
@@ -25,6 +30,10 @@ public class Person {
 
   public String getLastName() {
     return lastName;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public void setUsername(String username) {
