@@ -25,7 +25,7 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class CourseService {
-  List<Course> courses = new ArrayList<Course>(){{
+    public static List<Course> courses = new ArrayList<Course>(){{
     HeadingWidget w1 = new HeadingWidget();
     ParagraphWidget w2 = new ParagraphWidget();
     w1.setId(1);
