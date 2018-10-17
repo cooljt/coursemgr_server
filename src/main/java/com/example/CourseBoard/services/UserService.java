@@ -48,7 +48,7 @@ public class UserService {
         return usr;
       }
     }
-    return null;
+    return new Person();
   }
 
   @PostMapping("api/logout")

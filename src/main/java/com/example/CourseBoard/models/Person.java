@@ -1,15 +1,30 @@
 package com.example.CourseBoard.models;
 
 public class Person {
-  private int id;
+  private int id = -10;
   private String username;
   private String password;
   private String firstName;
   private String lastName;
   private String userType;
+  private String phone;
+  private String email;
+  private String birth;
 
   public int getId() {
     return id;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public String getBirth() {
+    return birth;
   }
 
   public String getUserType() {
@@ -30,6 +45,18 @@ public class Person {
 
   public String getLastName() {
     return lastName;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public void setBirth(String birth) {
+    this.birth = birth;
   }
 
   public void setId(int id) {
