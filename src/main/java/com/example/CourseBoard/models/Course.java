@@ -8,7 +8,12 @@ public class Course {
   private String title;
   private Date created;
   private Date modified;
+  private String author;
   private List<Module> modules;
+
+  public void setAuthor(String author) {
+    this.author = author;
+  }
 
   public void setId(long id) {
     this.id = id;
@@ -32,6 +37,10 @@ public class Course {
 
   public long getId() {
     return id;
+  }
+
+  public String getAuthor() {
+    return author;
   }
 
   public String getTitle() {

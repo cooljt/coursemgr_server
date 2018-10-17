@@ -22,10 +22,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 @RestController
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class CourseService {
   List<Course> courses = new ArrayList<Course>(){{
     HeadingWidget w1 = new HeadingWidget();
@@ -63,15 +61,22 @@ public class CourseService {
     Course c1 = new Course();
     c1.setId(6);
     c1.setTitle("CS 5610");
+    c1.setAuthor("Ti");
     c1.setCreated(new Date(new Date().getTime()));
     c1.setModified(new Date(new Date().getTime()));
     c1.setModules(modules);
     add(c1);
   }};
 
-  @GetMapping("api/courses")
-  public List<Course> findAllCourses() {
-    return courses;
+  @GetMapping("api/courses/{author}")
+  public List<Course> findAllCourses(@PathVariable("author") String author) {
+    List<Course> ownedCourses = new ArrayList<>();
+    for (Course course:courses) {
+      if (course.getAuthor().equals(author)) {
+        ownedCourses.add(course);
+      }
+    }
+    return ownedCourses;
   }
 
   @PostMapping("api/courses")
@@ -80,7 +85,7 @@ public class CourseService {
     return courses;
   }
 
-  @DeleteMapping("api/courses/{courseId}")
+  @DeleteMapping("api/course/{courseId}")
   public List<Course> deleteCourse(@PathVariable("courseId") long id) {
     for (Course c:courses) {
       if (c.getId() == id) {
@@ -91,7 +96,7 @@ public class CourseService {
     return courses;
   }
 
-  @GetMapping("api/courses/{courseId}")
+  @GetMapping("api/course/{courseId}")
   public Course findCourseById(@PathVariable("courseId") long id) {
     for (Course course:courses) {
       if (course.getId() == id) {
@@ -101,7 +106,7 @@ public class CourseService {
     return null;
   }
 
-  @PutMapping("api/courses/{courseId}")
+  @PutMapping("api/course/{courseId}")
   public List<Course> updateCourseById(@PathVariable("courseId") long id, @RequestBody Course course) {
     for (int i = 0; i < courses.size(); i++) {
       if (courses.get(i).getId() == id) {
