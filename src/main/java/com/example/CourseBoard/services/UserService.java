@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class UserService {
   public Person register(@RequestBody Person user, HttpSession session) {
     for (Person usr:users) {
       if (usr.getUsername().equals(user.getUsername())) {
-        return null;
+        return new Person();
       }
     }
     session.setAttribute("currentPerson", user);
@@ -64,6 +65,18 @@ public class UserService {
   @GetMapping("api/user/{userId}")
   public Person getUserById(@PathVariable("userId") int userId) {
     return users.stream().filter(user -> user.getId() == userId).findFirst().get();
+  }
+
+  @PutMapping("api/profile")
+  public Person updateUserProfile(@RequestBody Person user, HttpSession session) {
+    for (int i = 0; i < users.size();i++) {
+      if (user.getId() == users.get(i).getId()) {
+        users.set(i,user);
+        session.setAttribute("currentPerson",users.get(i));
+        return users.get(i);
+      }
+    }
+    return null;
   }
 
 }
