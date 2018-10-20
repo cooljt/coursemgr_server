@@ -79,7 +79,7 @@ public class CourseService {
     return ownedCourses;
   }
 
-  @PostMapping("api/courses")
+  @PostMapping("api/course")
   public List<Course> createCourse(@RequestBody Course course) {
     courses.add(course);
     return courses;
