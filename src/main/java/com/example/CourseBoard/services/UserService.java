@@ -24,6 +24,7 @@ public class UserService {
     p1.setId(909);
     p1.setUsername("Ti");
     p1.setPassword("1234");
+    p1.setUserType("Faculty");
     add(p1);
   }};
   Random random = new Random();
