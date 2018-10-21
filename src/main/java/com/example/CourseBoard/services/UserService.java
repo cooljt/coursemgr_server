@@ -19,7 +19,13 @@ import javax.servlet.http.HttpSession;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class UserService {
-  List<Person> users = new ArrayList<>();
+  List<Person> users = new ArrayList<Person>(){{
+    Person p1 = new Person();
+    p1.setId(909);
+    p1.setUsername("Ti");
+    p1.setPassword("1234");
+    add(p1);
+  }};
   Random random = new Random();
   @PostMapping("api/register")
   public Person register(@RequestBody Person user, HttpSession session) {
