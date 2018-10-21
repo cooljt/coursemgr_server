@@ -10,6 +10,7 @@ public class Course {
   private Date modified;
   private String author;
   private List<Module> modules;
+  
 
   public void setAuthor(String author) {
     this.author = author;
