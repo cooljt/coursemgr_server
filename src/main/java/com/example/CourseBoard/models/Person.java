@@ -1,7 +1,16 @@
 package com.example.CourseBoard.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
-  private int id = -10;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
+
   private String username;
   private String password;
   private String firstName;
@@ -10,6 +19,20 @@ public class Person {
   private String phone;
   private String email;
   private String birth;
+
+
+  public void set(Person person) {
+    this.username = person.username;
+    this.password = person.password;
+    this.phone = person.phone;
+    this.email = person.email;
+  }
+
+  public Person() {}
+  public Person(String username, String password) {
+    this.username = username;
+    this.password = password;
+  }
 
   public int getId() {
     return id;

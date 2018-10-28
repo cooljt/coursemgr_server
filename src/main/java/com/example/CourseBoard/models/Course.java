@@ -1,22 +1,44 @@
 package com.example.CourseBoard.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Course {
-  private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
   private String title;
   private Date created;
   private Date modified;
-  private String author;
-  private List<Module> modules;
-  
 
-  public void setAuthor(String author) {
+  @ManyToOne
+  @JsonIgnore
+  private Faculty author;
+
+  @OneToMany(mappedBy = "course")
+  @JsonIgnore
+  private List<Module> modules;
+
+
+  public void setAuthor(Faculty author) {
     this.author = author;
+    if(!author.getAuthoredCourses().contains(this)) {
+      author.getAuthoredCourses().add(this);
+    }
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
@@ -36,11 +58,11 @@ public class Course {
     this.modules = modules;
   }
 
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public String getAuthor() {
+  public Faculty getAuthor() {
     return author;
   }
 

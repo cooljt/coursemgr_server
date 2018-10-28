@@ -1,13 +1,32 @@
 package com.example.CourseBoard.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Topic {
-  private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
   private String title;
+
+  @OneToMany(mappedBy = "topic")
+  @JsonIgnore
   private List<Widget> widgets;
 
-  public long getId() {
+  @OneToOne
+  @JsonIgnore
+  private Lesson lesson;
+
+  public int getId() {
     return id;
   }
 
@@ -19,7 +38,7 @@ public class Topic {
     return widgets;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
