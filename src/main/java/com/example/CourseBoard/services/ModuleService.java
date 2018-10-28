@@ -19,7 +19,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ModuleService {
   @GetMapping("/api/course/{cid}/module")
-  public List<Module> getAllModules(@PathVariable("cid") Long cid) {
+  public List<Module> getAllModules(@PathVariable("cid") int cid) {
     for (Course course:CourseService.courses) {
       if (course.getId() == cid) {
         return course.getModules();

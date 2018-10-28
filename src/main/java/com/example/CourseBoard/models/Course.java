@@ -38,6 +38,11 @@ public class Course {
     }
   }
 
+  public void setCourse(Course course) {
+    this.title = course.title;
+    this.modified = course.modified;
+  }
+
   public void setId(int id) {
     this.id = id;
   }
