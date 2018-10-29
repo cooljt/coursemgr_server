@@ -1,1 +1,1 @@
-# courseManager_CS5610_18fall_TiJiang
+# courseManager server Spring+JPA+MySql
