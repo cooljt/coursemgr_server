@@ -1,5 +1,6 @@
 package com.example.CourseBoard.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.CourseBoard.models.Module;
 import com.example.CourseBoard.models.Course;
+import com.example.CourseBoard.repositories.CourseRepository;
+import com.example.CourseBoard.repositories.ModuleRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,63 +21,41 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ModuleService {
+
+  @Autowired
+  CourseRepository courseRepository;
+  @Autowired
+  ModuleRepository moduleRepository;
+
   @GetMapping("/api/course/{cid}/module")
   public List<Module> getAllModules(@PathVariable("cid") int cid) {
-    for (Course course:CourseService.courses) {
-      if (course.getId() == cid) {
-        return course.getModules();
-      }
-    }
-    return new ArrayList<>();
+    return courseRepository.findById(cid).get().getModules();
   }
 
   @PostMapping("/api/course/{cid}/module")
-  public List<Module> createModule(@PathVariable("cid") long cid, @RequestBody Module module) {
-    for (Course course:CourseService.courses) {
-      if (course.getId() == cid) {
-        course.getModules().add(module);
-        return course.getModules();
-      }
-    }
-    return new ArrayList<>();
+  public Module createModule(@PathVariable("cid") int cid, @RequestBody Module module) {
+    Course course = courseRepository.findById(cid).get();
+    Module m = moduleRepository.save(module);
+    course.addModule(m);
+    m.setCourse(course);
+    courseRepository.save(course);
+    return moduleRepository.save(m);
   }
 
   @GetMapping("/api/module/{mid}")
-  public Module findModuleById(@PathVariable("mid") long mid) {
-    for (Course course:CourseService.courses) {
-      for (Module module:course.getModules()) {
-        if (module.getId() == mid) {
-          return module;
-        }
-      }
-    }
-    return new Module();
+  public Module findModuleById(@PathVariable("mid") int mid) {
+    return moduleRepository.findById(mid).get();
   }
 
   @PutMapping("/api/module/{mid}")
-  public List<Module> updateModuleById(@PathVariable("mid") long mid, @RequestBody Module m) {
-    for (Course course:CourseService.courses) {
-      List<Module> temp = course.getModules();
-      for (int i = 0; i < temp.size(); i++) {
-        if (temp.get(i).getId() == mid) {
-          temp.set(i,m);
-          return course.getModules();
-        }
-      }
-    }
-    return new ArrayList<>();
+  public Module updateModuleById(@PathVariable("mid") int mid, @RequestBody Module m) {
+    Module module = moduleRepository.findById(mid).get();
+    module.setTitle(m.getTitle());
+    return moduleRepository.save(module);
   }
 
   @DeleteMapping("/api/module/{mid}")
-  public List<Module> deleteModuleById(@PathVariable("mid") long mid) {
-    for (Course course:CourseService.courses) {
-      for (Module module:course.getModules()) {
-        if (module.getId() == mid) {
-          course.getModules().remove(module);
-          return course.getModules();
-        }
-      }
-    }
-    return new ArrayList<>();
+  public void deleteModuleById(@PathVariable("mid") int mid) {
+    moduleRepository.deleteById(mid);
   }
 }

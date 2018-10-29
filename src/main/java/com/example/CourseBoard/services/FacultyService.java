@@ -23,6 +23,7 @@ public class FacultyService {
   @Autowired
   CourseRepository courseRepository;
 
+
   @GetMapping("api/faculty")
   public List<Faculty> findAllFacult() {
     return (List<Faculty>)facultyRepository.findAll();

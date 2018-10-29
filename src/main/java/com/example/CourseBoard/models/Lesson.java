@@ -25,16 +25,31 @@ public class Lesson {
   @JsonIgnore
   private Module module;
 
+  public Module getModule() {
+    return module;
+  }
+
+  public void setModule(Module module) {
+    this.module = module;
+  }
+
+  public void addTopic(Topic topic) {
+    this.topics.add(topic);
+    if(topic.getLesson() != this) {
+      topic.setLesson(this);
+    }
+  }
+
   public int getId() {
-    return id;
+    return this.id;
   }
 
   public String getTitle() {
-    return title;
+    return this.title;
   }
 
   public List<Topic> getTopics() {
-    return topics;
+    return this.topics;
   }
 
   public void setId(int id) {

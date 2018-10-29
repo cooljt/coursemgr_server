@@ -20,12 +20,12 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class CourseService {
-    public static List<Course> courses = new ArrayList<Course>();
     @Autowired
     CourseRepository courserRepository;
 
   @GetMapping("api/courses")
   public List<Course> findAllCourses() {
+
     return (List<Course>)courserRepository.findAll();
   }
 
@@ -36,13 +36,15 @@ public class CourseService {
   }
 
   @PostMapping("api/course")
-  public Course createCourse(@RequestBody Course course) {
-    return courserRepository.save(course);
+  public List<Course> createCourse(@RequestBody Course course) {
+    courserRepository.save(course);
+    return (List<Course>)courserRepository.findAll();
   }
 
   @DeleteMapping("api/course/{courseId}")
-  public void deleteCourse(@PathVariable("courseId") int id) {
+  public List<Course> deleteCourse(@PathVariable("courseId") int id) {
     courserRepository.deleteById(id);
+    return (List<Course>)courserRepository.findAll();
   }
 
   @GetMapping("api/course/{courseId}")

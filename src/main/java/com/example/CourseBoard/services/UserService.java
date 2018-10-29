@@ -34,7 +34,7 @@ public class UserService {
       session.setAttribute("currentPerson",user);
       return personRepository.save(user);
     }
-    return null;
+    return new Person();
   }
 
   @GetMapping("api/profile")
@@ -49,7 +49,7 @@ public class UserService {
       session.setAttribute("currentPerson",persons.get(0));
       return persons.get(0);
     }
-    return null;
+    return new Person();
   }
 
   @PostMapping("api/logout")

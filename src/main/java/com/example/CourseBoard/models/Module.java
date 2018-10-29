@@ -23,8 +23,23 @@ public class Module {
   private Course course;
 
   @OneToMany(mappedBy = "module")
-  @JsonIgnore
   private List<Lesson> lessons;
+
+
+  public void addLessons(Lesson lesson) {
+    this.lessons.add(lesson);
+    if(lesson.getModule() != this) {
+      lesson.setModule(this);
+    }
+  }
+
+  public Course getCourse() {
+    return course;
+  }
+
+  public void setCourse(Course course) {
+    this.course = course;
+  }
 
   public int getId() {
     return id;

@@ -27,9 +27,18 @@ public class Course {
   private Faculty author;
 
   @OneToMany(mappedBy = "course")
-  @JsonIgnore
   private List<Module> modules;
 
+
+  public Course() {}
+
+  public Course(String title, Date created, Date modified, Faculty author, List<Module> modules) {
+    this.title = title;
+    this.created = created;
+    this.modified = modified;
+    this.author = author;
+    this.modules = modules;
+  }
 
   public void setAuthor(Faculty author) {
     this.author = author;
@@ -38,9 +47,17 @@ public class Course {
     }
   }
 
+  public void addModule(Module module) {
+    this.modules.add(module);
+    if(module.getCourse() != this) {
+      module.setCourse(this);
+    }
+  }
+
   public void setCourse(Course course) {
     this.title = course.title;
     this.modified = course.modified;
+    this.modules = course.modules;
   }
 
   public void setId(int id) {

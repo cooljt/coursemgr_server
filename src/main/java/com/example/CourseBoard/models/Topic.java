@@ -19,12 +19,19 @@ public class Topic {
   private String title;
 
   @OneToMany(mappedBy = "topic")
-  @JsonIgnore
   private List<Widget> widgets;
 
   @OneToOne
   @JsonIgnore
   private Lesson lesson;
+
+  public Lesson getLesson() {
+    return lesson;
+  }
+
+  public void setLesson(Lesson lesson) {
+    this.lesson = lesson;
+  }
 
   public int getId() {
     return id;
