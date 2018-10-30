@@ -12,6 +12,9 @@ public class ImageWidget extends Widget{
     this.src = src;
   }
 
+  public void setImageWidget(ImageWidget widget) {
+    this.src = widget.src;
+  }
 
   public String getSrc() {
     return src;

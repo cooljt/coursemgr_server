@@ -5,15 +5,20 @@ import javax.persistence.Entity;
 @Entity
 public class ListWidget extends Widget{
   private String items;
-  private String orderTyep;
+  private String orderType;
 
   public ListWidget(){}
 
-  public ListWidget(String items, String orderTyep) {
+  public ListWidget(String items, String orderType) {
     this.items = items;
-    this.orderTyep = orderTyep;
+    this.orderType = orderType;
   }
 
+  public void setListWidget(ListWidget widget) {
+    this.items = widget.items;
+    this.orderType = widget.orderType;
+  }
+  
   public String getItems() {
     return items;
   }
@@ -22,11 +27,11 @@ public class ListWidget extends Widget{
     this.items = items;
   }
 
-  public String getOrderTyep() {
-    return orderTyep;
+  public String getOrderType() {
+    return orderType;
   }
 
-  public void setOrderTyep(String orderTyep) {
-    this.orderTyep = orderTyep;
+  public void setOrderType(String orderType) {
+    this.orderType = orderType;
   }
 }

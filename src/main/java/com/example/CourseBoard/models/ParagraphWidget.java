@@ -8,6 +8,10 @@ public class ParagraphWidget extends Widget{
 
   public ParagraphWidget(){}
 
+  public void setParagraphWidget(ParagraphWidget widget) {
+    this.text = widget.text;
+  }
+
   public ParagraphWidget(String text) {
     this.text = text;
   }

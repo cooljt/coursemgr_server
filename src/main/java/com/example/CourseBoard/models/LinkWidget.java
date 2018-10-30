@@ -14,6 +14,11 @@ public class LinkWidget extends Widget{
     this.title = title;
   }
 
+  public void setLinkWidget(LinkWidget widget) {
+    this.href = widget.href;
+    this.title = widget.title;
+  }
+
   public String getHref() {
     return href;
   }
