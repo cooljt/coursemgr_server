@@ -19,6 +19,18 @@ public class Widget {
   @JsonIgnore
   private Topic topic;
 
+  public Topic getTopic() {
+    return topic;
+  }
+
+  public void setTopic(Topic topic) {
+    this.topic = topic;
+  }
+
+  public void setWidget(Widget widget) {
+    this.type = widget.type;
+  }
+
   public long getId() {
     return id;
   }

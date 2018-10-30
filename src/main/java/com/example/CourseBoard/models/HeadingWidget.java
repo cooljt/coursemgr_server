@@ -20,6 +20,11 @@ public class HeadingWidget extends Widget{
     this.text = text;
   }
 
+  public void setHeadingWidget(HeadingWidget widget) {
+    this.size = widget.size;
+    this.text = widget.text;
+  }
+
   public HeadingWidget(){}
 
   public int getSize() {

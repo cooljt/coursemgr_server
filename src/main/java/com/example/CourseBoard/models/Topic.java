@@ -33,6 +33,13 @@ public class Topic {
     this.lesson = lesson;
   }
 
+  public void addWidget(Widget widget) {
+    this.widgets.add(widget);
+    if(widget.getTopic() != this) {
+      widget.setTopic(this);
+    }
+  }
+
   public int getId() {
     return id;
   }
