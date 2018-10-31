@@ -23,6 +23,7 @@ public class HeadingWidget extends Widget{
   public void setHeadingWidget(HeadingWidget widget) {
     this.size = widget.size;
     this.text = widget.text;
+    super.setWidget(widget);
   }
 
   public HeadingWidget(){}

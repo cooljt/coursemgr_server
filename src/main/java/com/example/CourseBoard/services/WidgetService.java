@@ -27,7 +27,9 @@ public class WidgetService {
 
   @GetMapping("api/topic/{tid}/widget")
   public List<Widget> findAllWidgets(@PathVariable("tid") int tid) {
-    return topicRepository.findById(tid).get().getWidgets();
+    //return topicRepository.findById(tid).get().getWidgets();
+    Topic topic = topicRepository.findById(tid).get();
+    return widgetRepository.findWidgetOrderByRank(topic);
   }
 
   @PostMapping("api/topic/{tid}/widget")

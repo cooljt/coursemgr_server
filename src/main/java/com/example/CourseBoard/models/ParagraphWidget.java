@@ -10,6 +10,7 @@ public class ParagraphWidget extends Widget{
 
   public void setParagraphWidget(ParagraphWidget widget) {
     this.text = widget.text;
+    super.setWidget(widget);
   }
 
   public ParagraphWidget(String text) {

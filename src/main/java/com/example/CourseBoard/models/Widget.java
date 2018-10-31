@@ -46,6 +46,7 @@ public class Widget {
 
   public void setWidget(Widget widget) {
     this.type = widget.type;
+    this.rank = widget.rank;
   }
 
   public long getId() {

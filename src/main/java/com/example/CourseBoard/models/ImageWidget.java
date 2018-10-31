@@ -14,6 +14,7 @@ public class ImageWidget extends Widget{
 
   public void setImageWidget(ImageWidget widget) {
     this.src = widget.src;
+    super.setWidget(widget);
   }
 
   public String getSrc() {

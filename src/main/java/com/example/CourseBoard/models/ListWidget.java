@@ -17,6 +17,7 @@ public class ListWidget extends Widget{
   public void setListWidget(ListWidget widget) {
     this.items = widget.items;
     this.orderType = widget.orderType;
+    super.setWidget(widget);
   }
   
   public String getItems() {

@@ -17,6 +17,7 @@ public class LinkWidget extends Widget{
   public void setLinkWidget(LinkWidget widget) {
     this.href = widget.href;
     this.title = widget.title;
+    super.setWidget(widget);
   }
 
   public String getHref() {
