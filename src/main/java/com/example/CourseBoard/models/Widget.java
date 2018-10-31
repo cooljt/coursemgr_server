@@ -14,13 +14,30 @@ public class Widget {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   private String type;
+  private int rank;
 
   @OneToOne
   @JsonIgnore
   private Topic topic;
 
+  public Widget(){}
+
+  public Widget(String type, int rank, Topic topic) {
+    this.type = type;
+    this.rank = rank;
+    this.topic = topic;
+  }
+
   public Topic getTopic() {
     return topic;
+  }
+
+  public int getRank() {
+    return rank;
+  }
+
+  public void setRank(int rank) {
+    this.rank = rank;
   }
 
   public void setTopic(Topic topic) {
